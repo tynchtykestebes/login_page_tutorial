@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login_page_tutorial/config/app_routes.dart';
 import 'package:login_page_tutorial/constants/app_colors.dart';
-import 'package:login_page_tutorial/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          fontFamily: 'Urbanist', scaffoldBackgroundColor: AppColors.bgc),
-      home: const LoginPage(),
+        fontFamily: 'Urbanist',
+        scaffoldBackgroundColor: AppColors.bgc,
+        brightness: Brightness.dark,
+      ),
+      initialRoute: AppRoutes.login,
+      routes: AppRoutes.pages,
     );
   }
 }
