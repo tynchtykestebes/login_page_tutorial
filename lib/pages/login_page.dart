@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:login_page_tutorial/components/app_text_field.dart';
 import 'package:login_page_tutorial/config/app_icons.dart';
 import 'package:login_page_tutorial/config/app_routes.dart';
 import 'package:login_page_tutorial/config/app_strings.dart';
@@ -36,11 +35,31 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const AppTextField(hint: AppStrings.username),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: AppStrings.username,
+                    border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12),
+                      ),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.5),
+                  ),
+                ),
                 const SizedBox(
                   height: 16,
                 ),
-                const AppTextField(hint: AppStrings.password),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: AppStrings.password,
+                    border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(12),),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.5),
+                  ),
+                ),
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
@@ -59,7 +78,8 @@ class LoginPage extends StatelessWidget {
                   height: 48,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushReplacementNamed(AppRoutes.main);
+                      Navigator.of(context)
+                          .pushReplacementNamed(AppRoutes.main);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.amber,

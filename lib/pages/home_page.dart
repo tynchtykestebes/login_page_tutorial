@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:login_page_tutorial/components/post_item.dart';
 import 'package:login_page_tutorial/components/toolbar.dart';
 import 'package:login_page_tutorial/config/app_icons.dart';
+import 'package:login_page_tutorial/config/app_routes.dart';
 import 'package:login_page_tutorial/config/app_strings.dart';
 
 // ignore: must_be_immutable
@@ -19,7 +20,9 @@ class HomePage extends StatelessWidget {
         title: AppStrings.appName,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.nearby);
+            },
             icon: SvgPicture.asset(AppIcons.icLocation),
           ),
         ],

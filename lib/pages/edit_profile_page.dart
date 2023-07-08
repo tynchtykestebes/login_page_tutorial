@@ -4,6 +4,7 @@ import 'package:login_page_tutorial/components/toolbar.dart';
 import 'package:login_page_tutorial/components/user_avatar.dart';
 import 'package:login_page_tutorial/config/app_strings.dart';
 import 'package:login_page_tutorial/constants/app_colors.dart';
+import 'package:login_page_tutorial/constants/app_text.dart';
 
 enum Gender {
   none,
@@ -79,6 +80,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 height: 16,
               ),
               Container(
+                padding: const EdgeInsets.only(left: 12, top: 6, right: 12),
                 decoration: BoxDecoration(
                   color: AppColors.fieldColor,
                   borderRadius: const BorderRadius.all(
@@ -88,7 +90,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(AppStrings.gender),
+                    Text(
+                      AppStrings.gender,
+                      style: Apptext.body1.copyWith(fontSize: 12),
+                    ),
                     Row(
                       children: [
                         Expanded(
